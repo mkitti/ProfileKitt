@@ -101,10 +101,10 @@ public class IJ2Plugin extends InteractiveCommand implements RoiListener {
 			}
 		}	
 	}
-	public < T extends RealType< T >  > void plotProfile(ImagePlus imp2, ij.gui.Line line) {
+	public < T extends RealType< T > & NativeType< T > > void plotProfile(ImagePlus imp2, ij.gui.Line line) {
 		plotProfile(imp2,converter.convert(line));
 	}
-	public < T extends RealType< T >  > void plotProfile(ImagePlus imp2, Line line) {
+	public < T extends RealType< T > & NativeType< T > > void plotProfile(ImagePlus imp2, Line line) {
 		final Img<T> image = ImagePlusAdapter.wrap( imp2 );
 		//TODO: See if frame and z coordinate are needed for ndims > 2
 		int frame, z;
